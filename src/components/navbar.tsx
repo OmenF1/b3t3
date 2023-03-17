@@ -57,21 +57,26 @@ const Navbar = () => {
                         navbar ? 'block' : 'hidden'
                     }`}
                     >
-                    <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                        <li className="text-white">
-                        <Link href="/">
-                            HOME
-                        </Link>
+                    <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-white">
+                        <li>
+                            <Link href="/">
+                                HOME
+                            </Link>
                         </li>
-                        <li className="text-white">
-                        <Link href="/blogs">
-                            BLOGS
-                        </Link>
+                        <li>
+                            <Link href="/blogs">
+                                BLOGS
+                            </Link>
                         </li>
-                        <li className="text-white">
-                        <Link href="/about">
-                            LINK UP
-                        </Link>
+                        <li>
+                            <Link href="/contact">
+                                LINK UP
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/posts/create">
+                                NEW POST
+                            </Link>
                         </li>
                     </ul>
                     </div>
