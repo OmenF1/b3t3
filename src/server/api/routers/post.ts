@@ -1,14 +1,15 @@
 import { resolve } from "path";
 import { title } from "process";
 import { z } from "zod";
+import { postInput } from "~/types/postTypes";
 import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
 
 export const postRouter = createTRPCRouter({
     all: publicProcedure.query(async ({ ctx }) => {
         const posts = await ctx.prisma.post.findMany()
-        return posts.map(({id, title, createdOn}) => ({id, title, createdOn}));
+        return posts.map(({id, title, body}) => ({id, title, body}));
     }),
-    create: protectedProcedure.input(z.object ({ body: z.string(), title: z.string() })).mutation( async ({ctx, input}) => {
+    create: publicProcedure.input(postInput).mutation(async ({ ctx, input }) => {
         
         return ctx.prisma.post.create({
             data: {
