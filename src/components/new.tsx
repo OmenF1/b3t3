@@ -45,7 +45,7 @@ export default function NewPost() {
                 </div>
                 <div>
                     <input type="checkbox" name="commentsAllow"></input>
-                    <label >Allow Comments</label>
+                    <label className="text-white">Allow Comments</label>
                 </div>
                 <div>
                     <button className="shadow p-2 rounded-5 bg-blue-400" type="submit">
