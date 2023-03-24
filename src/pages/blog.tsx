@@ -11,7 +11,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-        <div className="grid grid-cols-1 sm:grid-cols-2  sm:divide-x divide-lime-600">
+        <div className="grid grid-cols-1 sm:grid-cols-3">
             <Posts />
         </div>
       </main>
