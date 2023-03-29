@@ -12,7 +12,7 @@ export default function PostCard({post} : PostProps) {
             <div className="flex flex-col text-white items-center w-full mb-5">
                 <div className="sm:container-sm border-2 border-white rounded-md w-11/12 sm:w-3/4">
                     <div className="flex text-white border-b-2 border-white text-center h-10 bg-gray-900 justify-center items-center">
-                        <Link href="#">
+                        <Link href={{ pathname: '/posts/view', query: { postId: id } }}>
                             {title}
                         </Link>
                     </div>

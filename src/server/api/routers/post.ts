@@ -9,6 +9,14 @@ export const postRouter = createTRPCRouter({
         const posts = await ctx.prisma.post.findMany()
         return posts.map(({id, title, body}) => ({id, title, body}));
     }),
+    single: publicProcedure.input(z.object({ id: z.string() })).query(async ({ ctx, input }) => {
+        const post = await ctx.prisma.post.findFirst({
+            where: {
+                id: input.id
+            }
+        })
+        return post;
+    }),
     create: publicProcedure.input(postInput).mutation(async ({ ctx, input }) => {
         
         return ctx.prisma.post.create({
